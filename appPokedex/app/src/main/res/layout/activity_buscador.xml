@@ -6,15 +6,15 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".buscador">
+    tools:context=".buscador"
+    android:background="#C40108">
 
   <LinearLayout
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       android:orientation="vertical"
       android:padding="16dp"
-      tools:ignore="MissingConstraints"
-      android:background="?android:colorBackground">
+      tools:ignore="MissingConstraints">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -29,7 +29,7 @@
           android:text="INICIO"
           android:layout_marginEnd="16dp"
           tools:ignore="HardcodedText"
-          android:background="@drawable/rounded_corners"/>
+          android:textColor="@color/white"/>
 
       <EditText
           android:layout_width="171dp"
@@ -37,8 +37,8 @@
           android:gravity="center_horizontal|center_vertical"
           android:singleLine="false"
           android:text="Selecciona el tipo"
-          android:background="@drawable/rounded_corners"
           android:padding="12dp"
+          android:textColor="@color/white"
           tools:ignore="DuplicateSpeakableTextCheck,HardcodedText,TextContrastCheck,TouchTargetSizeCheck" />
 
       <ImageView
@@ -58,7 +58,7 @@
           android:layout_width="168dp"
           android:layout_height="wrap_content"
           android:layout_marginEnd="16dp"
-          android:background="@drawable/rounded_corners"
+          android:textColor="@color/white"
           android:gravity="center_horizontal|center_vertical"
           android:minHeight="48dp"
           android:text="Selecciona el tipo"
@@ -68,7 +68,7 @@
       <EditText
           android:layout_width="162dp"
           android:layout_height="wrap_content"
-          android:background="@drawable/rounded_corners"
+          android:textColor="@color/white"
           android:gravity="center_horizontal|center_vertical"
           android:minHeight="48dp"
           android:text="Selecciona el tipo"
@@ -82,7 +82,7 @@
         android:hint="Nombre"
         android:padding="16dp"
         android:layout_margin="8dp"
-        android:background="@drawable/rounded_corners"
+        android:textColor="@color/white"
         tools:ignore="HardcodedText,TextContrastCheck"/>
 
     <EditText
@@ -91,7 +91,7 @@
         android:hint="Región"
         android:padding="16dp"
         android:layout_margin="8dp"
-        android:background="@drawable/rounded_corners"
+        android:textColor="@color/white"
         tools:ignore="HardcodedText,TextContrastCheck"/>
 
     <androidx.recyclerview.widget.RecyclerView

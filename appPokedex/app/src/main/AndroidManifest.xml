@@ -16,7 +16,7 @@
             android:name=".buscador"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Login"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,6 +24,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Inicio" />
+        <activity android:name=".entrada_pokedex" />
+        <activity android:name=".informacion_entrenador" />
+        <activity android:name=".informacion_pokemon" />
+        <activity android:name=".registro" />
     </application>
 
 </manifest>

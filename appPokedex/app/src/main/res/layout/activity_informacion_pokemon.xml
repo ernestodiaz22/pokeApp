@@ -333,10 +333,11 @@
                         android:id="@+id/imageButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/redondeo_icono_ayuda"
-                        android:layout_marginTop="125dp"
                         android:layout_marginLeft="25dp"
-                        app:srcCompat="@drawable/edit_document_24px" />
+                        android:layout_marginTop="125dp"
+                        android:background="@drawable/redondeo_icono_ayuda"
+                        app:srcCompat="@drawable/edit_document_24px"
+                        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
                 </FrameLayout>
             </LinearLayout>

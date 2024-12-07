@@ -56,7 +56,8 @@
                         android:layout_marginTop="5dp"
                         android:layout_marginRight="5dp"
                         android:background="@android:color/transparent"
-                        app:srcCompat="@drawable/favorite_24px" />
+                        app:srcCompat="@drawable/favorite_24px"
+                        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
                     <TextView
                         android:id="@+id/textView35"
