@@ -8,4 +8,97 @@
     android:layout_height="match_parent"
     tools:context=".buscador">
 
-  </androidx.constraintlayout.widget.ConstraintLayout>
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="vertical"
+      android:padding="16dp"
+      tools:ignore="MissingConstraints"
+      android:background="?android:colorBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:padding="16dp">
+
+      <Button
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="INICIO"
+          android:layout_marginEnd="16dp"
+          tools:ignore="HardcodedText"
+          android:background="@drawable/rounded_corners"/>
+
+      <EditText
+          android:layout_width="171dp"
+          android:layout_height="wrap_content"
+          android:gravity="center_horizontal|center_vertical"
+          android:singleLine="false"
+          android:text="Selecciona el tipo"
+          android:background="@drawable/rounded_corners"
+          android:padding="12dp"
+          tools:ignore="DuplicateSpeakableTextCheck,HardcodedText,TextContrastCheck,TouchTargetSizeCheck" />
+
+      <ImageView
+          android:layout_width="44dp"
+          android:layout_height="44dp"
+          android:src="@android:drawable/ic_menu_search" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:padding="16dp">
+
+      <EditText
+          android:layout_width="168dp"
+          android:layout_height="wrap_content"
+          android:layout_marginEnd="16dp"
+          android:background="@drawable/rounded_corners"
+          android:gravity="center_horizontal|center_vertical"
+          android:minHeight="48dp"
+          android:text="Selecciona el tipo"
+          android:padding="12dp"
+          tools:ignore="HardcodedText,TextContrastCheck" />
+
+      <EditText
+          android:layout_width="162dp"
+          android:layout_height="wrap_content"
+          android:background="@drawable/rounded_corners"
+          android:gravity="center_horizontal|center_vertical"
+          android:minHeight="48dp"
+          android:text="Selecciona el tipo"
+          android:padding="10dp"
+          tools:ignore="HardcodedText,TextContrastCheck" />
+    </LinearLayout>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre"
+        android:padding="16dp"
+        android:layout_margin="8dp"
+        android:background="@drawable/rounded_corners"
+        tools:ignore="HardcodedText,TextContrastCheck"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Región"
+        android:padding="16dp"
+        android:layout_margin="8dp"
+        android:background="@drawable/rounded_corners"
+        tools:ignore="HardcodedText,TextContrastCheck"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+  </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
