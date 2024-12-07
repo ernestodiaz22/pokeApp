@@ -13,7 +13,22 @@
         android:theme="@style/Theme.AppPokedex"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".entrada_pokedex"
+            android:exported="false" />
+        <activity
+            android:name=".informacion_pokemon"
+            android:exported="false" />
+        <activity
+            android:name=".registro"
+            android:exported="false" />
+        <activity
+            android:name=".informacion_entrenador"
+            android:exported="false" />
+        <activity
+            android:name=".Inicio"
+            android:exported="false" />
+        <activity
+            android:name=".Login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
