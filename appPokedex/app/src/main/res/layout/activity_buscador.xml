@@ -24,6 +24,7 @@
         android:padding="16dp">
 
       <Button
+          android:id="@+id/botonInicio"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:text="INICIO"
@@ -41,7 +42,8 @@
           android:textColor="@color/white"
           tools:ignore="DuplicateSpeakableTextCheck,HardcodedText,TextContrastCheck,TouchTargetSizeCheck" />
 
-      <ImageView
+      <ImageButton
+          android:id="@+id/searchButton"
           android:layout_width="44dp"
           android:layout_height="44dp"
           android:src="@android:drawable/ic_menu_search" />

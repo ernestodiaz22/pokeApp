@@ -315,7 +315,7 @@
                                 app:srcCompat="@drawable/stats_graphic" />
                         </LinearLayout>
                         <Button
-                            android:id="@+id/button8"
+                            android:id="@+id/botonEntrPok"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Entrada Pokédex"

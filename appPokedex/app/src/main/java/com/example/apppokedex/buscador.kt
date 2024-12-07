@@ -1,7 +1,10 @@
 package com.example.apppokedex
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
+import android.widget.ImageButton
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -12,12 +15,20 @@ class buscador : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         this.enableEdgeToEdge()
         setContentView(R.layout.activity_buscador)
-        ViewCompat.setOnApplyWindowInsetsListener(
-            findViewById(R.id.main)
-        ) { v: View, insets: WindowInsetsCompat ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        val botonInicio = findViewById<Button>(R.id.botonInicio)
+        val botonSearch = findViewById<ImageButton>(R.id.searchButton)
+
+        // Configurar el listener para el botón
+        botonInicio.setOnClickListener {
+            // Crear el Intent para navegar a la actividad de Inicio
+            val intent = Intent(this, Inicio::class.java)
+            startActivity(intent)
+        }
+        // Configurar el listener para el botón
+        botonSearch.setOnClickListener {
+            // Crear el Intent para navegar a la actividad de Inicio
+            val intent = Intent(this, entrada_pokedex::class.java)
+            startActivity(intent)
         }
     }
 }

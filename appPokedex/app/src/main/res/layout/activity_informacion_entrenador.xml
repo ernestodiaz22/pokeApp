@@ -229,7 +229,7 @@
                     android:layout_height="wrap_content" />
 
                 <Button
-                    android:id="@+id/button7"
+                    android:id="@+id/equipoPok"
                     android:layout_width="match_parent"
                     android:background="@drawable/redondeo_icono_ayuda"
                     android:textColor="@color/white"
