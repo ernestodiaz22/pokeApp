@@ -44,14 +44,15 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 app:srcCompat="@drawable/foto_perfil_entrenador" />
+
                             <ImageButton
                                 android:id="@+id/imageButton2"
                                 android:layout_width="45dp"
-                                android:layout_gravity="start"
                                 android:layout_height="wrap_content"
+                                android:layout_gravity="start"
                                 android:background="@drawable/redondeo_icono_ayuda"
                                 app:srcCompat="@drawable/help_24px"
-                                />
+                                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
                         </FrameLayout>
                     </LinearLayout>
                     <FrameLayout
@@ -210,14 +211,15 @@
                                     android:background="@drawable/stroke1" />
                             </LinearLayout>
                         </LinearLayout>
+
                         <ImageButton
                             android:id="@+id/imageButton3"
                             android:layout_width="45dp"
-                            android:layout_gravity="end"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="end"
                             android:background="@drawable/redondeo_icono_ayuda"
                             app:srcCompat="@drawable/edit_document_24px"
-                            />
+                            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
                     </FrameLayout>
                 </LinearLayout>
                 <androidx.recyclerview.widget.RecyclerView
@@ -229,8 +231,9 @@
                 <Button
                     android:id="@+id/button7"
                     android:layout_width="match_parent"
+                    android:background="@drawable/redondeo_icono_ayuda"
+                    android:textColor="@color/white"
                     android:layout_height="wrap_content"
-
                     android:text="EQUIPOS POKÉMON" />
             </LinearLayout>
         </ScrollView>
