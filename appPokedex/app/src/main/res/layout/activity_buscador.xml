@@ -6,102 +6,76 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".buscador"
-    android:background="#C40108">
+    tools:context=".buscador">
+
 
   <LinearLayout
       android:layout_width="match_parent"
       android:layout_height="match_parent"
-      android:orientation="vertical"
-      android:padding="16dp"
-      tools:ignore="MissingConstraints">
+      android:orientation="vertical">
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_horizontal"
-        android:padding="16dp">
-
-      <Button
-          android:id="@+id/botonInicio"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:text="INICIO"
-          android:layout_marginEnd="16dp"
-          tools:ignore="HardcodedText"
-          android:textColor="@color/white"/>
-
-      <EditText
-          android:layout_width="171dp"
-          android:layout_height="wrap_content"
-          android:gravity="center_horizontal|center_vertical"
-          android:singleLine="false"
-          android:text="Selecciona el tipo"
-          android:padding="12dp"
-          android:textColor="@color/white"
-          tools:ignore="DuplicateSpeakableTextCheck,HardcodedText,TextContrastCheck,TouchTargetSizeCheck" />
+        android:layout_height="wrap_content">
 
       <ImageButton
-          android:id="@+id/searchButton"
-          android:layout_width="44dp"
-          android:layout_height="44dp"
-          android:src="@android:drawable/ic_menu_search"
-          tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-    </LinearLayout>
+          android:id="@+id/imageButton5"
+          android:layout_width="35dp"
+          android:layout_height="35dp"
+          android:scaleType="fitCenter"
+          android:layout_gravity="end"
+          android:background="@android:color/transparent"
+          app:srcCompat="@drawable/icon_search" />
+
+      <EditText
+          android:id="@+id/editTextText2"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:ems="10"
+          android:inputType="text"
+          android:textColor="@color/white"
+          android:text="Buscar pokémon" />
+    </FrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_horizontal"
-        android:padding="16dp">
+        android:orientation="horizontal">
 
-      <EditText
-          android:layout_width="168dp"
+      <Spinner
+          android:id="@+id/spinnerTipo1"
+          android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:layout_marginEnd="16dp"
-          android:textColor="@color/white"
-          android:gravity="center_horizontal|center_vertical"
-          android:minHeight="48dp"
-          android:text="Selecciona el tipo"
-          android:padding="12dp"
-          tools:ignore="HardcodedText,TextContrastCheck" />
-
-      <EditText
-          android:layout_width="162dp"
+          android:layout_weight="1"
+          android:ems="10" />
+      <Spinner
+          android:id="@+id/spinnerTipo2"
+          android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:textColor="@color/white"
-          android:gravity="center_horizontal|center_vertical"
-          android:minHeight="48dp"
-          android:text="Selecciona el tipo"
-          android:padding="10dp"
-          tools:ignore="HardcodedText,TextContrastCheck" />
+          android:layout_weight="1"
+          android:ems="10" />
     </LinearLayout>
 
-    <EditText
+    <Spinner
+        android:id="@+id/spinnerRegion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nombre"
-        android:padding="16dp"
-        android:layout_margin="8dp"
-        android:textColor="@color/white"
-        tools:ignore="HardcodedText,TextContrastCheck"/>
+        android:ems="10" />
 
-    <EditText
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Región"
-        android:padding="16dp"
-        android:layout_margin="8dp"
-        android:textColor="@color/white"
-        tools:ignore="HardcodedText,TextContrastCheck"/>
+        android:layout_height="match_parent">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical" >
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+      </LinearLayout>
+    </ScrollView>
+
   </LinearLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
