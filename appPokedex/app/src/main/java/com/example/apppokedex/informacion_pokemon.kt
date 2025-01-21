@@ -1,6 +1,8 @@
 package com.example.apppokedex
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -11,10 +13,14 @@ class informacion_pokemon : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_informacion_pokemon)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        val botonEntrPok = findViewById<Button>(R.id.botonEntrPok)
+
+        // Configurar el listener para el botón
+        botonEntrPok.setOnClickListener {
+            // Crear el Intent para navegar a la actividad de Inicio
+            val intent = Intent(this, entrada_pokedex::class.java)
+            startActivity(intent)
         }
+
     }
 }

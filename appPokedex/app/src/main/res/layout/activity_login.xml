@@ -82,14 +82,15 @@
                 android:orientation="horizontal"
                 android:layout_marginTop="20dp">
 
-                <TextView
-                    android:id="@+id/textView42"
+                <Button
+                    android:id="@+id/registrarse"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="37dp"
                     android:layout_marginLeft="10dp"
-                    android:textColor="@color/white"
                     android:layout_weight="1"
-                    android:text="Regístrate" />
+                    android:text="Regístrate"
+                    android:textColor="@color/white"
+                    tools:ignore="TouchTargetSizeCheck" />
                 <TextView
                     android:id="@+id/textView3"
                     android:layout_width="wrap_content"

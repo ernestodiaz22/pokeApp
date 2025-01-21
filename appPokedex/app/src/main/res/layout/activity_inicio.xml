@@ -22,28 +22,28 @@
             app:srcCompat="@drawable/pokeball" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/infTrainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:text="INFORMACIÓN DEL ENTRADOR" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/searchPok"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="BUSCAR POKÉMON"
             android:layout_marginBottom="20dp"/>
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/favPok"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="POKÉMONS FAVORITOS"
             android:layout_marginBottom="20dp"/>
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/exit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="SALIR" />
