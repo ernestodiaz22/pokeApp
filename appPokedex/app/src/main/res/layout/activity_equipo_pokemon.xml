@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -24,6 +25,8 @@
                     android:layout_marginTop="80dp"
                     android:paddingVertical="20dp"
                     android:orientation="vertical">
+
+
 
                     <TextView
                         android:id="@+id/textView53"
@@ -60,7 +63,9 @@
                                 android:layout_height="25dp"
                                 android:layout_gravity="end"
                                 android:layout_marginHorizontal="20dp"
+
                                 android:layout_marginVertical="55dp"
+
                                 app:srcCompat="@drawable/male_icon" />
 
                             <TextView
@@ -73,6 +78,7 @@
                                 android:layout_gravity="center_horizontal"
                                 android:textSize="24sp"
                                 android:text="Charizard" />
+
 
 
                             <TextView
@@ -92,6 +98,7 @@
                                 android:layout_gravity="center"
                                 android:layout_marginLeft="33dp"
                                 android:background="@drawable/barra_hp"/>
+
                             <TextView
                                 android:id="@+id/textView55"
                                 android:layout_width="wrap_content"
@@ -335,5 +342,6 @@
                     </LinearLayout>
                 </LinearLayout>
             </ScrollView>
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
