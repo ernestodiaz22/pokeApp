@@ -19,6 +19,7 @@ class buscador : AppCompatActivity() {
         this.enableEdgeToEdge()
         setContentView(R.layout.activity_buscador)
 
+
         // Configura el RecyclerView
         val recyclerView: RecyclerView = findViewById(R.id.recyclerViewPokemon)
         recyclerView.layoutManager = LinearLayoutManager(this)
@@ -54,6 +55,12 @@ class buscador : AppCompatActivity() {
         val adapterTipos = ArrayAdapter(
             this,
             android.R.layout.simple_spinner_item,
+
+        //conectar las opciones del spinner
+        val adapterTipos = ArrayAdapter(
+            this,
+            android.R.layout.simple_spinner_item, //diseño del select
+
             tiposPokemon
         )
         val adapterRegiones = ArrayAdapter(
@@ -61,6 +68,7 @@ class buscador : AppCompatActivity() {
             android.R.layout.simple_spinner_item,
             regiones
         )
+
 
         // Diseño del desplegable
         adapterTipos.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -77,15 +85,17 @@ class buscador : AppCompatActivity() {
                 if (position != 0) {
                     val opcionSeleccionada = tiposPokemon[position]
                     // Manejar la opción seleccionada
-                }
-            }
 
             override fun onNothingSelected(parent: AdapterView<*>) {
+
                 // Nada seleccionado
+
+                    // Nada seleccionado
             }
         }
 
         spinnerTipo2.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+
             override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
                 if (position != 0) {
                     val opcionSeleccionada = tiposPokemon[position]
@@ -109,6 +119,25 @@ class buscador : AppCompatActivity() {
             override fun onNothingSelected(parent: AdapterView<*>) {
                 // Nada seleccionado
             }
+
+
+       /* val botonInicio = findViewById<Button>(R.id.botonInicio)
+        val botonSearch = findViewById<ImageButton>(R.id.searchButton)
+
+        // Configurar el listener para el botón
+        botonInicio.setOnClickListener {
+            // Crear el Intent para navegar a la actividad de Inicio
+            val intent = Intent(this, Inicio::class.java)
+            startActivity(intent)
+
         }
+        // Configurar el listener para el botón
+        botonSearch.setOnClickListener {
+            // Crear el Intent para navegar a la actividad de Inicio
+            val intent = Intent(this, entrada_pokedex::class.java)
+            startActivity(intent)
+        }*/
     }
+
 }
+
