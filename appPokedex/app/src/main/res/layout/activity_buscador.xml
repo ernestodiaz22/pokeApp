@@ -8,12 +8,12 @@
     android:layout_height="match_parent"
     tools:context=".buscador">
 
-
   <LinearLayout
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       android:orientation="vertical">
 
+    <!-- Search bar -->
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -37,6 +37,7 @@
           android:text="Buscar pokémon" />
     </FrameLayout>
 
+    <!-- Spinners -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -44,38 +45,30 @@
 
       <Spinner
           android:id="@+id/spinnerTipo1"
-          android:layout_width="wrap_content"
+          android:layout_width="0dp"
           android:layout_height="wrap_content"
-          android:layout_weight="1"
-          android:ems="10" />
+          android:layout_weight="1" />
+
       <Spinner
           android:id="@+id/spinnerTipo2"
-          android:layout_width="wrap_content"
+          android:layout_width="0dp"
           android:layout_height="wrap_content"
-          android:layout_weight="1"
-          android:ems="10" />
+          android:layout_weight="1" />
     </LinearLayout>
 
     <Spinner
         android:id="@+id/spinnerRegion"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10" />
+        android:layout_height="wrap_content" />
 
-    <ScrollView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewPokemon"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:scrollbars="vertical" />
 
-      <LinearLayout
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:orientation="vertical" >
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-      </LinearLayout>
-    </ScrollView>
 
   </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
