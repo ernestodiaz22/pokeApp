@@ -7,22 +7,60 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 class buscador : AppCompatActivity() {
-    val spinnerTipo1 : Spinner = findViewById(R.id.spinnerTipo1)
-    val spinnerTipo2 : Spinner = findViewById(R.id.spinnerTipo2)
-    val tiposPokemon = listOf("Selecciona el tipo","Acero","Agua","Bicho","Dragón","Eléctrico","Fantasma","Fuego","","Hada","","Hielo","Lucha","Normal","Planta","Psíquico","Roca","Siniestro","Tierra","Veneno", "Volador")
-    val spinnerRegion : Spinner = findViewById(R.id.spinnerRegion)
-    val regiones = listOf("Kanto","Islas Sete","Johto","Hoenn","Sinnoh","Teselia","Kalos","Alola","Galar","Hisui")
+    private lateinit var recyclerViewPokemon: RecyclerView
+    private lateinit var adapter: PokemonAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         this.enableEdgeToEdge()
         setContentView(R.layout.activity_buscador)
 
+
+        // Configura el RecyclerView
+        val recyclerView: RecyclerView = findViewById(R.id.recyclerViewPokemon)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+
+        val pokemonList = listOf(
+            Pokemon(1, R.drawable.bulbasaur, "Bulbasaur", "Planta", "Veneno"),
+            Pokemon(4, R.drawable.charmander, "Charmander", "Fuego", ""),
+            Pokemon(7, R.drawable.squirtle, "Squirtle", "Agua", ""),
+            Pokemon(25, R.drawable.pikachu, "Pikachu", "Eléctrico", ""),
+            Pokemon(6, R.drawable.charizard, "Charizard", "Fuego", "Volador")
+        )
+
+        // Vincula el adaptador con el RecyclerView
+        recyclerView.adapter = PokemonAdapter(pokemonList)
+
+        // Inicializa las vistas aquí, después de setContentView
+        val spinnerTipo1: Spinner = findViewById(R.id.spinnerTipo1)
+        val spinnerTipo2: Spinner = findViewById(R.id.spinnerTipo2)
+        val spinnerRegion: Spinner = findViewById(R.id.spinnerRegion)
+
+        // Listas para los Spinners
+        val tiposPokemon = listOf(
+            "Selecciona el tipo", "Acero", "Agua", "Bicho", "Dragón", "Eléctrico", "Fantasma",
+            "Fuego", "Hada", "Hielo", "Lucha", "Normal", "Planta", "Psíquico",
+            "Roca", "Siniestro", "Tierra", "Veneno", "Volador"
+        )
+        val regiones = listOf(
+            "Kanto", "Islas Sete", "Johto", "Hoenn", "Sinnoh", "Teselia", "Kalos",
+            "Alola", "Galar", "Hisui"
+        )
+
+        // Configurar adaptadores para los Spinners
+        val adapterTipos = ArrayAdapter(
+            this,
+            android.R.layout.simple_spinner_item,
+
         //conectar las opciones del spinner
         val adapterTipos = ArrayAdapter(
             this,
             android.R.layout.simple_spinner_item, //diseño del select
+
             tiposPokemon
         )
         val adapterRegiones = ArrayAdapter(
@@ -31,54 +69,57 @@ class buscador : AppCompatActivity() {
             regiones
         )
 
-        // diseño del desplegable
+
+        // Diseño del desplegable
         adapterTipos.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        adapterRegiones.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+
+        // Asignar los adaptadores a los Spinners
         spinnerTipo1.adapter = adapterTipos
         spinnerTipo2.adapter = adapterTipos
-        adapterRegiones.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerRegion.adapter = adapterRegiones
 
+        // Configurar listeners para los Spinners
         spinnerTipo1.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
-                if (position == 0) {
-                // Texto por defecto seleccionado
-                } else {
+                if (position != 0) {
                     val opcionSeleccionada = tiposPokemon[position]
-                // Manejar la opción seleccionada
-                }
-            }
+                    // Manejar la opción seleccionada
 
             override fun onNothingSelected(parent: AdapterView<*>) {
+
+                // Nada seleccionado
+
                     // Nada seleccionado
             }
         }
 
         spinnerTipo2.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long){
-                if(position == 0){
-                    //texto por defecto
-                }else{
+
+            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
+                if (position != 0) {
                     val opcionSeleccionada = tiposPokemon[position]
+                    // Manejar la opción seleccionada
                 }
             }
-            override fun onNothingSelected(parent: AdapterView<*>){
 
+            override fun onNothingSelected(parent: AdapterView<*>) {
+                // Nada seleccionado
             }
         }
 
-        spinnerRegion.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
-            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long){
-                if(position == 0){
-                    //texto por defecto
-                }else{
+        spinnerRegion.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
+                if (position != 0) {
                     val opcionSeleccionada = regiones[position]
+                    // Manejar la opción seleccionada
                 }
             }
-            override  fun onNothingSelected(parent: AdapterView<*>){
 
+            override fun onNothingSelected(parent: AdapterView<*>) {
+                // Nada seleccionado
             }
-        }
-        }
+
 
        /* val botonInicio = findViewById<Button>(R.id.botonInicio)
         val botonSearch = findViewById<ImageButton>(R.id.searchButton)
@@ -88,6 +129,7 @@ class buscador : AppCompatActivity() {
             // Crear el Intent para navegar a la actividad de Inicio
             val intent = Intent(this, Inicio::class.java)
             startActivity(intent)
+
         }
         // Configurar el listener para el botón
         botonSearch.setOnClickListener {
@@ -96,3 +138,6 @@ class buscador : AppCompatActivity() {
             startActivity(intent)
         }*/
     }
+
+}
+
