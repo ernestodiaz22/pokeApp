@@ -15,8 +15,6 @@
         android:padding="16dp"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp">
-
-
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -33,8 +31,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="450dp"
                         android:background="@drawable/fondo_info_entrenador"
-                        android:orientation="vertical"
-                        >
+                        android:orientation="vertical">
                         <FrameLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -62,8 +59,7 @@
                         android:background="@drawable/fondo_info_entrenador"
                         android:paddingLeft="10dp"
                         android:paddingTop="10dp"
-                        android:paddingRight="10dp"
-                        >
+                        android:paddingRight="10dp">
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -222,23 +218,490 @@
                             tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
                     </FrameLayout>
                 </LinearLayout>
-                <androidx.recyclerview.widget.RecyclerView
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginVertical="20dp"
+                    android:padding="16dp"
+                    android:background="@drawable/rounded_layout">
 
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="20dp"
+                            android:orientation="horizontal">
+
+                            <FrameLayout
+                                android:layout_width="170dp"
+                                android:layout_height="140dp"
+                                android:layout_marginRight="10dp"
+                                android:background="@drawable/fondo_info_entrenador">
+
+                                <ImageView
+                                    android:id="@+id/imageView234"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginLeft="60dp"
+                                    android:layout_marginTop="40dp"
+                                    app:srcCompat="@drawable/male_icon" />
+
+                                <TextView
+                                    android:id="@+id/textView445"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="45dp"
+                                    android:layout_marginTop="20dp"
+                                    android:text="152/152"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:id="@+id/textView2222"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="18dp"
+                                    android:text="HP"
+                                    android:textColor="#5AC55A"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:id="@+id/textView4444"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="30dp"
+                                    android:layout_marginTop="45dp"
+                                    android:text="LV.50"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp" />
+
+                                <ImageView
+                                    android:id="@+id/imageView2569"
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    app:srcCompat="@drawable/charizard" />
+
+                                <View
+                                    android:layout_width="45dp"
+                                    android:layout_height="5dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="55dp"
+                                    android:background="@drawable/barra_hp" />
+                            </FrameLayout>
+
+                            <FrameLayout
+                                android:layout_width="170dp"
+                                android:layout_height="140dp"
+                                android:background="@drawable/fondo_info_entrenador">
+
+                                <ImageView
+                                    android:id="@+id/imageView093"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginLeft="60dp"
+                                    android:layout_marginTop="40dp"
+                                    app:srcCompat="@drawable/male_icon" />
+
+                                <TextView
+                                    android:id="@+id/textView6120"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="45dp"
+                                    android:layout_marginTop="20dp"
+                                    android:text="152/152"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:id="@+id/textView3422"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="18dp"
+                                    android:text="HP"
+                                    android:textColor="#5AC55A"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:id="@+id/textView6345"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="30dp"
+                                    android:layout_marginTop="45dp"
+                                    android:text="LV.50"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp" />
+
+                                <ImageView
+                                    android:id="@+id/imageView1823"
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:layout_marginTop="10dp"
+                                    app:srcCompat="@drawable/gengar_sprite" />
+
+                                <View
+                                    android:layout_width="45dp"
+                                    android:layout_height="5dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="55dp"
+                                    android:background="@drawable/barra_hp" />
+                            </FrameLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="155dp"
+                            android:orientation="horizontal">
+
+                            <FrameLayout
+                                android:layout_width="170dp"
+                                android:layout_height="140dp"
+                                android:layout_marginRight="10dp"
+                                android:background="@drawable/fondo_info_entrenador">
+
+                                <ImageView
+                                    android:id="@+id/imageView2433"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginLeft="60dp"
+                                    android:layout_marginTop="40dp"
+                                    app:srcCompat="@drawable/male_icon" />
+
+                                <TextView
+                                    android:id="@+id/textView23234"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="45dp"
+                                    android:layout_marginTop="20dp"
+                                    android:text="152/152"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:id="@+id/textView45562"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="18dp"
+                                    android:text="HP"
+                                    android:textColor="#5AC55A"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:id="@+id/textView324325"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="30dp"
+                                    android:layout_marginTop="45dp"
+                                    android:text="LV.50"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp" />
+
+                                <ImageView
+                                    android:id="@+id/imageView23432"
+                                    android:layout_width="90dp"
+                                    android:layout_height="100dp"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="10dp"
+                                    app:srcCompat="@drawable/venasaur_sprite" />
+
+                                <View
+                                    android:layout_width="45dp"
+                                    android:layout_height="5dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="55dp"
+                                    android:background="@drawable/barra_hp" />
+                            </FrameLayout>
+
+                            <FrameLayout
+                                android:layout_width="170dp"
+                                android:layout_height="140dp"
+
+                                android:background="@drawable/fondo_info_entrenador">
+
+                                <ImageView
+                                    android:id="@+id/imageView55432"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginLeft="60dp"
+                                    android:layout_marginTop="40dp"
+                                    app:srcCompat="@drawable/male_icon" />
+
+                                <TextView
+                                    android:id="@+id/textView76534"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="45dp"
+                                    android:layout_marginTop="20dp"
+                                    android:text="152/152"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:id="@+id/textView45623"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="18dp"
+                                    android:text="HP"
+                                    android:textColor="#5AC55A"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:id="@+id/textView56789"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="30dp"
+                                    android:layout_marginTop="45dp"
+                                    android:text="LV.50"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp" />
+
+                                <ImageView
+                                    android:id="@+id/imageView23467"
+                                    android:layout_width="90dp"
+                                    android:layout_height="100dp"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="10dp"
+                                    app:srcCompat="@drawable/alakazam_sprite" />
+
+                                <View
+                                    android:layout_width="45dp"
+                                    android:layout_height="5dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="55dp"
+                                    android:background="@drawable/barra_hp" />
+                            </FrameLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="310dp">
+
+                            <FrameLayout
+                                android:layout_width="170dp"
+                                android:layout_height="140dp"
+                                android:layout_marginRight="10dp"
+                                android:background="@drawable/fondo_info_entrenador">
+
+                                <ImageView
+                                    android:id="@+id/imageView24"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginLeft="60dp"
+                                    android:layout_marginTop="40dp"
+                                    app:srcCompat="@drawable/female_icon" />
+
+                                <TextView
+                                    android:id="@+id/textView64"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="45dp"
+                                    android:layout_marginTop="20dp"
+                                    android:text="152/152"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:id="@+id/textView63"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="18dp"
+                                    android:text="HP"
+                                    android:textColor="#5AC55A"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:id="@+id/textView59"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="30dp"
+                                    android:layout_marginTop="45dp"
+                                    android:text="LV.50"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp" />
+
+                                <ImageView
+                                    android:id="@+id/imageView17"
+                                    android:layout_width="80dp"
+                                    android:layout_height="100dp"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="10dp"
+                                    app:srcCompat="@drawable/snorlax_sprite" />
+
+                                <View
+                                    android:layout_width="45dp"
+                                    android:layout_height="5dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="55dp"
+                                    android:background="@drawable/barra_hp" />
+                            </FrameLayout>
+
+                            <FrameLayout
+                                android:layout_width="170dp"
+                                android:layout_height="140dp"
+                                android:background="@drawable/fondo_info_entrenador">
+                                <ImageView
+                                    android:id="@+id/imageView26"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginLeft="60dp"
+                                    android:layout_marginTop="40dp"
+                                    app:srcCompat="@drawable/female_icon" />
+
+                                <TextView
+                                    android:id="@+id/textView65"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="45dp"
+                                    android:layout_marginTop="20dp"
+                                    android:text="152/152"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:id="@+id/textView66"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="18dp"
+                                    android:text="HP"
+                                    android:textColor="#5AC55A"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:id="@+id/textView60"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="30dp"
+                                    android:layout_marginTop="45dp"
+                                    android:text="LV.50"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp" />
+
+                                <ImageView
+                                    android:id="@+id/imageView18"
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    app:srcCompat="@drawable/milotic_sprite" />
+
+                                <View
+                                    android:layout_width="45dp"
+                                    android:layout_height="5dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="55dp"
+                                    android:background="@drawable/barra_hp" />
+                            </FrameLayout>
+
+                        </LinearLayout>
+                        <TextView
+                            android:id="@+id/textView69"
+                            android:layout_width="140dp"
+                            android:layout_height="35dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="130dp"
+                            android:background="@drawable/fondo_info_entrenador"
+                            android:gravity="center"
+                            android:text="Charizard"
+                            android:textColor="@color/white"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/textView70"
+                            android:layout_width="140dp"
+                            android:layout_height="35dp"
+                            android:layout_marginLeft="195dp"
+                            android:layout_marginTop="130dp"
+                            android:background="@drawable/fondo_info_entrenador"
+                            android:gravity="center"
+                            android:text="Gengar"
+                            android:textColor="@color/white"
+                            android:textSize="20sp" />
+                        <TextView
+                            android:id="@+id/textView73"
+                            android:layout_width="140dp"
+                            android:layout_height="35dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="285dp"
+                            android:background="@drawable/fondo_info_entrenador"
+                            android:gravity="center"
+                            android:text="Venasaur"
+                            android:textColor="@color/white"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/textView74"
+                            android:layout_width="140dp"
+                            android:layout_height="35dp"
+                            android:layout_marginLeft="195dp"
+                            android:layout_marginTop="285dp"
+                            android:background="@drawable/fondo_info_entrenador"
+                            android:gravity="center"
+                            android:text="Alakazam"
+                            android:textColor="@color/white"
+                            android:textSize="20sp" />
+                        <TextView
+                            android:id="@+id/textView77"
+                            android:layout_width="140dp"
+                            android:layout_height="35dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="440dp"
+                            android:background="@drawable/fondo_info_entrenador"
+                            android:gravity="center"
+                            android:text="Snorlax"
+                            android:textColor="@color/white"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/textView76"
+                            android:layout_width="140dp"
+                            android:layout_height="35dp"
+                            android:layout_marginLeft="195dp"
+                            android:layout_marginTop="440dp"
+                            android:background="@drawable/fondo_info_entrenador"
+                            android:gravity="center"
+                            android:text="Milotic"
+                            android:textColor="@color/white"
+                            android:textSize="20sp" />
+                    </FrameLayout>
+
+                </LinearLayout>
                 <Button
                     android:id="@+id/equipoPok"
                     android:layout_width="match_parent"
-                    android:background="@drawable/redondeo_icono_ayuda"
-                    android:textColor="@color/white"
                     android:layout_height="wrap_content"
-                    android:text="EQUIPOS POKÉMON" />
+                    android:background="@drawable/redondeo_icono_ayuda"
+                    android:text="EQUIPOS POKÉMON"
+                    android:textColor="@color/white" />
             </LinearLayout>
         </ScrollView>
-
-
-
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
