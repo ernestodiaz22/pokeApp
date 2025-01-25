@@ -1,18 +1,77 @@
 package com.example.apppokedex
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import android.widget.Toolbar
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
+
+
 class buscador : AppCompatActivity() {
     private lateinit var recyclerViewPokemon: RecyclerView
     private lateinit var adapter: PokemonAdapter
+
+
+    //añadir menú
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return true
+    }
+    fun mostrarAyuda(view: View?) {
+        val intent = Intent(this, Ayuda::class.java)
+        startActivity(intent)
+    }
+    fun irBuscador(view: View?) {
+        val intent = Intent(this, Ayuda::class.java)
+        startActivity(intent)
+    }
+    fun irInformacionPokemon(view: View?) {
+        val intent = Intent(this, Ayuda::class.java)
+        startActivity(intent)
+    }
+    fun irPokemonFavoritos(view: View?) {
+        val intent = Intent(this, Ayuda::class.java)
+        startActivity(intent)
+    }
+    fun salirAplicacion() {
+        finish()  // Cierra la actividad actual
+        System.exit(0)  // Termina el proceso de la aplicación
+    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val id = item.itemId
+        if (id == R.id.buscador_pokemon) {
+            irBuscador(null)
+            return true
+        }
+        if (id == R.id.informacio_pokemon) {
+            irInformacionPokemon(null)
+            return true
+        }
+        if (id == R.id.pokemon_favoritos) {
+            irPokemonFavoritos(null)
+            return true
+        }
+        if (id == R.id.ayuda) {
+            mostrarAyuda(null)
+            return true
+        }
+        if (id == R.id.salir) {
+            salirAplicacion()
+            return true
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,16 +110,10 @@ class buscador : AppCompatActivity() {
             "Alola", "Galar", "Hisui"
         )
 
-        // Configurar adaptadores para los Spinners
-        val adapterTipos = ArrayAdapter(
-            this,
-            android.R.layout.simple_spinner_item,
-
         //conectar las opciones del spinner
         val adapterTipos = ArrayAdapter(
             this,
             android.R.layout.simple_spinner_item, //diseño del select
-
             tiposPokemon
         )
         val adapterRegiones = ArrayAdapter(
@@ -81,22 +134,30 @@ class buscador : AppCompatActivity() {
 
         // Configurar listeners para los Spinners
         spinnerTipo1.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
+            override fun onItemSelected(
+                parent: AdapterView<*>,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
                 if (position != 0) {
                     val opcionSeleccionada = tiposPokemon[position]
                     // Manejar la opción seleccionada
+                }
+            }
 
             override fun onNothingSelected(parent: AdapterView<*>) {
-
                 // Nada seleccionado
-
-                    // Nada seleccionado
             }
         }
 
         spinnerTipo2.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-
-            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
+            override fun onItemSelected(
+                parent: AdapterView<*>,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
                 if (position != 0) {
                     val opcionSeleccionada = tiposPokemon[position]
                     // Manejar la opción seleccionada
@@ -109,7 +170,12 @@ class buscador : AppCompatActivity() {
         }
 
         spinnerRegion.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
+            override fun onItemSelected(
+                parent: AdapterView<*>,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
                 if (position != 0) {
                     val opcionSeleccionada = regiones[position]
                     // Manejar la opción seleccionada
@@ -119,8 +185,9 @@ class buscador : AppCompatActivity() {
             override fun onNothingSelected(parent: AdapterView<*>) {
                 // Nada seleccionado
             }
-
-
+        }
+    }
+}
        /* val botonInicio = findViewById<Button>(R.id.botonInicio)
         val botonSearch = findViewById<ImageButton>(R.id.searchButton)
 
@@ -137,7 +204,6 @@ class buscador : AppCompatActivity() {
             val intent = Intent(this, entrada_pokedex::class.java)
             startActivity(intent)
         }*/
-    }
 
-}
+
 

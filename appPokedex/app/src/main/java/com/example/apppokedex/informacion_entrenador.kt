@@ -15,11 +15,6 @@ class informacion_entrenador : AppCompatActivity() {
         setContentView(R.layout.activity_informacion_entrenador)
         val equipoPok = findViewById<Button>(R.id.equipoPok)
 
-        // Configurar el listener para el botón
-        equipoPok.setOnClickListener {
-            // Crear el Intent para navegar a la actividad de Inicio
-            val intent = Intent(this, Inicio::class.java)
-            startActivity(intent)
-        }
+
     }
 }
