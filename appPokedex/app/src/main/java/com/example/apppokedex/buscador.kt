@@ -13,12 +13,13 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-
+import kotlin.system.exitProcess
 
 
 class buscador : AppCompatActivity() {
     private lateinit var recyclerViewPokemon: RecyclerView
     private lateinit var adapter: PokemonAdapter
+
 
 
     //añadir menú
@@ -31,20 +32,20 @@ class buscador : AppCompatActivity() {
         startActivity(intent)
     }
     fun irBuscador(view: View?) {
-        val intent = Intent(this, Ayuda::class.java)
+        val intent = Intent(this, buscador::class.java)
         startActivity(intent)
     }
     fun irInformacionPokemon(view: View?) {
-        val intent = Intent(this, Ayuda::class.java)
+        val intent = Intent(this, informacion_entrenador::class.java)
         startActivity(intent)
     }
     fun irPokemonFavoritos(view: View?) {
-        val intent = Intent(this, Ayuda::class.java)
+        val intent = Intent(this, favoritos::class.java)
         startActivity(intent)
     }
     fun salirAplicacion() {
-        finish()  // Cierra la actividad actual
-        System.exit(0)  // Termina el proceso de la aplicación
+        finishAffinity()  // Cierra la actividad actual
+        exitProcess(0)  // Termina el proceso de la aplicación
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id = item.itemId
@@ -77,6 +78,10 @@ class buscador : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         this.enableEdgeToEdge()
         setContentView(R.layout.activity_buscador)
+
+        // Configura el Toolbar
+        val toolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
 
 
         // Configura el RecyclerView
