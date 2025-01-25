@@ -15,12 +15,5 @@ class registro : AppCompatActivity() {
         setContentView(R.layout.activity_registro)
         val button = findViewById<Button>(R.id.registro)
 
-        // Configurar el listener para el botón
-        button.setOnClickListener {
-            // Crear el Intent para navegar a la actividad de Inicio
-            val intent = Intent(this, Inicio::class.java)
-            startActivity(intent)
-        }
-
     }
 }
