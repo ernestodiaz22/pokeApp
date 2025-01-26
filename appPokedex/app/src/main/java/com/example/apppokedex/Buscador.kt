@@ -8,16 +8,14 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
-import android.widget.Toolbar
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlin.system.exitProcess
 
 
-class buscador : AppCompatActivity() {
+class Buscador : AppCompatActivity() {
     private lateinit var recyclerViewPokemon: RecyclerView
     private lateinit var adapter: PokemonAdapter
 
@@ -33,15 +31,15 @@ class buscador : AppCompatActivity() {
         startActivity(intent)
     }
     fun irBuscador(view: View?) {
-        val intent = Intent(this, buscador::class.java)
+        val intent = Intent(this, Buscador::class.java)
         startActivity(intent)
     }
     fun irInformacionPokemon(view: View?) {
-        val intent = Intent(this, informacion_entrenador::class.java)
+        val intent = Intent(this, Informacion_entrenador::class.java)
         startActivity(intent)
     }
     fun irPokemonFavoritos(view: View?) {
-        val intent = Intent(this, favoritos::class.java)
+        val intent = Intent(this, Favoritos::class.java)
         startActivity(intent)
     }
     fun salirAplicacion() {

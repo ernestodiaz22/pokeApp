@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,7 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class favoritos extends AppCompatActivity {
+public class Favoritos extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -32,17 +31,17 @@ public class favoritos extends AppCompatActivity {
     }
 
     public void irBuscador() {
-        Intent intent = new Intent(this, buscador.class);
+        Intent intent = new Intent(this, Buscador.class);
         startActivity(intent);
     }
 
     public void irInformacionPokemon() {
-        Intent intent = new Intent(this, informacion_entrenador.class);
+        Intent intent = new Intent(this, Informacion_entrenador.class);
         startActivity(intent);
     }
 
     public void irPokemonFavoritos() {
-        Intent intent = new Intent(this, favoritos.class);
+        Intent intent = new Intent(this, Favoritos.class);
         startActivity(intent);
     }
 

@@ -1,18 +1,35 @@
 package com.example.apppokedex;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class equipo_pokemon extends AppCompatActivity {
+public class Menu_equipos extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_menu_equipos);
+
+        // Configura el Toolbar
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        // Configuración de insets para bordes de la pantalla
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -26,23 +43,24 @@ public class equipo_pokemon extends AppCompatActivity {
     }
 
     public void irBuscador(View view) {
-        Intent intent = new Intent(this, buscador.class);
+        Intent intent = new Intent(this, Buscador.class);
         startActivity(intent);
     }
 
+
     public void irInformacionPokemon(View view) {
-        Intent intent = new Intent(this, informacion_entrenador.class);
+        Intent intent = new Intent(this, Informacion_entrenador.class);
         startActivity(intent);
     }
 
     public void irPokemonFavoritos(View view) {
-        Intent intent = new Intent(this, favoritos.class);
+        Intent intent = new Intent(this, Favoritos.class);
         startActivity(intent);
     }
 
     public void salirAplicacion() {
-        finishAffinity();
-        System.exit(0); // Correcto en Java
+        finishAffinity(); // Cierra todas las actividades
+        System.exit(0); // Finaliza el proceso de la aplicación
     }
 
     @Override
@@ -65,21 +83,5 @@ public class equipo_pokemon extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_equipo_pokemon);
-
-        // Configura el Toolbar
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
     }
 }

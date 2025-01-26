@@ -22,15 +22,15 @@ class Ayuda : AppCompatActivity() { // Aquí heredamos de AppCompatActivity
         startActivity(intent)
     }
     fun irBuscador(view: View?) {
-        val intent = Intent(this, buscador::class.java)
+        val intent = Intent(this, Buscador::class.java)
         startActivity(intent)
     }
     fun irInformacionPokemon(view: View?) {
-        val intent = Intent(this, informacion_entrenador::class.java)
+        val intent = Intent(this, Informacion_entrenador::class.java)
         startActivity(intent)
     }
     fun irPokemonFavoritos(view: View?) {
-        val intent = Intent(this, favoritos::class.java)
+        val intent = Intent(this, Favoritos::class.java)
         startActivity(intent)
     }
     fun salirAplicacion() {

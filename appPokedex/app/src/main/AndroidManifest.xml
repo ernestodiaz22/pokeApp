@@ -13,6 +13,9 @@
         android:theme="@style/Theme.AppPokedex"
         tools:targetApi="31" >
         <activity
+            android:name=".Activity_item_buscador_fav"
+            android:exported="false" />
+        <activity
             android:name=".Carga"
             android:exported="true"
             android:label="@string/app_name"
@@ -24,29 +27,31 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".equipo_pokemon"
+            android:name=".Equipo_pokemon"
             android:exported="false" />
         <activity
-            android:name=".menu_equipos"
+            android:name=".Menu_equipos"
             android:exported="false" />
         <activity
-            android:name=".favoritos"
+            android:name=".Favoritos"
             android:exported="false" />
         <activity
-            android:name=".buscador"
+            android:name=".Buscador"
             android:exported="false" />
         <activity
             android:name=".Ayuda"
             android:exported="false" />
         <activity
-            android:name=".informacion_entrenador"
+            android:name=".Informacion_entrenador"
             android:exported="false" />
         <activity
             android:name=".Login"
             android:exported="true" />
-        <activity android:name=".entrada_pokedex" />
-        <activity android:name=".informacion_pokemon" />
-        <activity android:name=".registro" />
+        <activity
+            android:name=".Entrada_pokedex"
+            android:exported="true" />
+        <activity android:name=".Informacion_pokemon" />
+        <activity android:name=".Registro" />
     </application>
 
 </manifest>

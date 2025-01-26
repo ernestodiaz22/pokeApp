@@ -5,13 +5,13 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import kotlin.system.exitProcess
 
-class informacion_entrenador : AppCompatActivity() {
+class Entrada_pokedex : AppCompatActivity() {
     //añadir menú
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
@@ -22,20 +22,20 @@ class informacion_entrenador : AppCompatActivity() {
         startActivity(intent)
     }
     fun irBuscador(view: View?) {
-        val intent = Intent(this, buscador::class.java)
+        val intent = Intent(this, Buscador::class.java)
         startActivity(intent)
     }
     fun irInformacionPokemon(view: View?) {
-        val intent = Intent(this, informacion_entrenador::class.java)
+        val intent = Intent(this, Informacion_entrenador::class.java)
         startActivity(intent)
     }
     fun irPokemonFavoritos(view: View?) {
-        val intent = Intent(this, favoritos::class.java)
+        val intent = Intent(this, Favoritos::class.java)
         startActivity(intent)
     }
     fun salirAplicacion() {
-        finishAffinity()  // Cierra la actividad actual
-        exitProcess(0)  // Termina el proceso de la aplicación
+        finishAffinity()
+        exitProcess(0)
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id = item.itemId
@@ -64,22 +64,16 @@ class informacion_entrenador : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_informacion_entrenador)
-
+        setContentView(R.layout.activity_entrada_pokedex)
 
         // Configura el Toolbar
-        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        val toolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
-        val equipoPok = findViewById<Button>(R.id.equipoPok)
-
-        // Configura el OnClickListener
-        equipoPok.setOnClickListener {
-            // Inicia la actividad equipos_pokemon
-            val intent = Intent(this, equipo_pokemon::class.java)
-            startActivity(intent)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
         }
-
-
     }
 }

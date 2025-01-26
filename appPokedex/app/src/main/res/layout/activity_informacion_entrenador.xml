@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".informacion_entrenador">
+    tools:context=".Informacion_entrenador">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -249,6 +249,7 @@
                                 android:layout_width="170dp"
                                 android:layout_height="140dp"
                                 android:layout_marginRight="10dp"
+                                android:onClick = "irDatosPokemon"
                                 android:background="@drawable/fondo_info_entrenador">
 
                                 <ImageView
@@ -309,6 +310,7 @@
                             <FrameLayout
                                 android:layout_width="170dp"
                                 android:layout_height="140dp"
+                                android:onClick = "irDatosPokemon"
                                 android:background="@drawable/fondo_info_entrenador">
 
                                 <ImageView
@@ -379,6 +381,7 @@
                                 android:layout_width="170dp"
                                 android:layout_height="140dp"
                                 android:layout_marginRight="10dp"
+                                android:onClick = "irDatosPokemon"
                                 android:background="@drawable/fondo_info_entrenador">
 
                                 <ImageView
@@ -441,6 +444,7 @@
                             <FrameLayout
                                 android:layout_width="170dp"
                                 android:layout_height="140dp"
+                                android:onClick = "irDatosPokemon"
 
                                 android:background="@drawable/fondo_info_entrenador">
 
@@ -513,6 +517,7 @@
                                 android:layout_width="170dp"
                                 android:layout_height="140dp"
                                 android:layout_marginRight="10dp"
+                                android:onClick = "irDatosPokemon"
                                 android:background="@drawable/fondo_info_entrenador">
 
                                 <ImageView
@@ -575,6 +580,7 @@
                             <FrameLayout
                                 android:layout_width="170dp"
                                 android:layout_height="140dp"
+                                android:onClick = "irDatosPokemon"
                                 android:background="@drawable/fondo_info_entrenador">
                                 <ImageView
                                     android:id="@+id/imageView26"
