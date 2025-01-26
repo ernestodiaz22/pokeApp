@@ -77,7 +77,11 @@ class Informacion_pokemon : AppCompatActivity() {
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
 
-
+        val layout = findViewById<Button>(R.id.botonEntrPok)
+        layout.setOnClickListener {
+            val intent = Intent(this, Entrada_pokedex::class.java)
+            startActivity(intent)
+        }
 
 
 
