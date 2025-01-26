@@ -11,6 +11,7 @@ import android.widget.Spinner
 import android.widget.Toolbar
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlin.system.exitProcess
@@ -87,14 +88,25 @@ class buscador : AppCompatActivity() {
         // Configura el RecyclerView
         val recyclerView: RecyclerView = findViewById(R.id.recyclerViewPokemon)
         recyclerView.layoutManager = LinearLayoutManager(this)
+        // Para un grid de dos columnas, pero queda feo si se deja
+        //val layoutManager = GridLayoutManager(this, 2)
+        //recyclerView.layoutManager = layoutManager
+
 
         val pokemonList = listOf(
             Pokemon(1, R.drawable.bulbasaur, "Bulbasaur", "Planta", "Veneno"),
+            Pokemon(2, R.drawable.ivysaur, "Ivysaur", "Planta", "Veneno"),
+            Pokemon(3, R.drawable.venusaur, "Venusaur", "Planta", "Veneno"),
             Pokemon(4, R.drawable.charmander, "Charmander", "Fuego", ""),
+            Pokemon(5, R.drawable.charmeleon, "Charmeleon", "Fuego", ""),
+            Pokemon(6, R.drawable.charizard, "Charizard", "Fuego", "Volador"),
             Pokemon(7, R.drawable.squirtle, "Squirtle", "Agua", ""),
-            Pokemon(25, R.drawable.pikachu, "Pikachu", "Eléctrico", ""),
-            Pokemon(6, R.drawable.charizard, "Charizard", "Fuego", "Volador")
+            Pokemon(8, R.drawable.wartortle, "Wartortle", "Agua", ""),
+            Pokemon(9, R.drawable.blastoise, "Blastoise", "Agua", ""),
+            Pokemon(10, R.drawable.caterpie, "Caterpie", "Bicho", ""),
+            Pokemon(15, R.drawable.pikachu, "Pikachu", "Electrico", "")
         )
+
 
         // Vincula el adaptador con el RecyclerView
         recyclerView.adapter = PokemonAdapter(pokemonList)

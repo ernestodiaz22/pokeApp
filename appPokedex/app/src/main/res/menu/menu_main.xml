@@ -1,16 +1,29 @@
-<?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item android:id="@+id/informacio_pokemon"
+
+    <item
+        android:id="@+id/informacio_pokemon"
         android:title="Información del entrenador"
-        android:orderInCategory="100"/>
-    <item android:title="Buscar pokémon"
-        android:id="@+id/buscador_pokemon"/>
-    <item android:title="Pokémon favoritos"
-        android:id="@+id/pokemon_favoritos"/>
-    <item android:title="Ayuda"
-        android:id="@+id/ayuda"/>
-    <item android:title="Salir"
-        android:id="@+id/salir"/>
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/buscador_pokemon"
+        android:title="Buscar pokémon"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/pokemon_favoritos"
+        android:title="Pokémon favoritos"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/ayuda"
+        android:title="Ayuda"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/salir"
+        android:title="Salir"
+        app:showAsAction="never" />
 </menu>

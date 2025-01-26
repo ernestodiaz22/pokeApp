@@ -24,7 +24,9 @@
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
+        android:theme="@style/CustomPopupMenu"
+        app:titleTextColor="@color/menu_text_color"
+        app:popupTheme="@style/CustomPopupMenu"
         tools:ignore="MissingConstraints" />
 
     <FrameLayout
