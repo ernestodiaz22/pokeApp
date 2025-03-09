@@ -64,23 +64,7 @@ public class Favoritos extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.recyclerViewPokemon);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        // Lista de Pokemons
-        List<Pokemon> pokemonList = new ArrayList<>();
-        pokemonList.add(new Pokemon(1, R.drawable.bulbasaur, "Bulbasaur", "Planta", "Veneno"));
-        pokemonList.add(new Pokemon(2, R.drawable.ivysaur, "Ivysaur", "Planta", "Veneno"));
-        pokemonList.add(new Pokemon(3, R.drawable.venusaur, "Venusaur", "Planta", "Veneno"));
-        pokemonList.add(new Pokemon(4, R.drawable.charmander, "Charmander", "Fuego", ""));
-        pokemonList.add(new Pokemon(5, R.drawable.charmeleon, "Charmeleon", "Fuego", ""));
-        pokemonList.add(new Pokemon(6, R.drawable.charizard, "Charizard", "Fuego", "Volador"));
-        pokemonList.add(new Pokemon(7, R.drawable.squirtle, "Squirtle", "Agua", ""));
-        pokemonList.add(new Pokemon(8, R.drawable.wartortle, "Wartortle", "Agua", ""));
-        pokemonList.add(new Pokemon(9, R.drawable.blastoise, "Blastoise", "Agua", ""));
-        pokemonList.add(new Pokemon(10, R.drawable.caterpie, "Caterpie", "Bicho", ""));
-        pokemonList.add(new Pokemon(15, R.drawable.pikachu, "Pikachu", "Electrico", ""));
 
-        // Vincula el adaptador con el RecyclerView
-        PokemonAdapter adapter = new PokemonAdapter(pokemonList);
-        recyclerView.setAdapter(adapter);
 
         // Manejo de padding con insets del sistema
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
