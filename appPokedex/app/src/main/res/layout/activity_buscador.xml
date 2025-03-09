@@ -75,7 +75,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <!-- RecyclerView -->
+    <Button
+        android:id="@+id/buttonAddPokemon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Añadir Pokémon"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:onClick="onAddPokemonClick"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewPokemon"
         android:layout_width="match_parent"
@@ -83,6 +91,5 @@
         android:padding="16dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:scrollbars="vertical" />
-
   </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -174,4 +174,8 @@ class Buscador : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
+    fun onAddPokemonClick(view: View) {
+        val intent = Intent(this, AgregarPokemonActivity::class.java)
+        startActivity(intent)
+    }
 }
