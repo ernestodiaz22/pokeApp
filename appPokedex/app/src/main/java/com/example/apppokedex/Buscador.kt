@@ -1,17 +1,18 @@
 package com.example.apppokedex
 
+import RetrofitClient
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
+import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.Spinner
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import retrofit2.Call
@@ -19,31 +20,47 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class Buscador : AppCompatActivity() {
+
     private lateinit var recyclerViewPokemon: RecyclerView
     private lateinit var adapter: PokemonAdapter
     private var pokemonList: MutableList<Pokemon> = mutableListOf()
 
+    private lateinit var editTextSearch: EditText
+    private lateinit var imageButtonSearch: ImageButton
+    private lateinit var spinnerTipo1: Spinner
+    private lateinit var spinnerTipo2: Spinner
+    private lateinit var spinnerRegion: Spinner
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        this.enableEdgeToEdge()
         setContentView(R.layout.activity_buscador)
 
-        val toolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.toolbar)
+
+        // Configura el Toolbar
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
 
+        // Inicialización de vistas
         recyclerViewPokemon = findViewById(R.id.recyclerViewPokemon)
+        editTextSearch = findViewById(R.id.editTextText2)
+        imageButtonSearch = findViewById(R.id.imageButton5)
+        spinnerTipo1 = findViewById(R.id.spinnerTipo1)
+        spinnerTipo2 = findViewById(R.id.spinnerTipo2)
+        spinnerRegion = findViewById(R.id.spinnerRegion)
+
+        // RecyclerView setup
         recyclerViewPokemon.layoutManager = LinearLayoutManager(this)
+        adapter = PokemonAdapter(pokemonList) { pokemon -> showDeleteConfirmationDialog(pokemon) }
+        recyclerViewPokemon.adapter = adapter
 
-        // Asegúrate de que el adapter se asigna antes de que los datos se carguen
-        adapter = PokemonAdapter(pokemonList)
-        recyclerViewPokemon.adapter = adapter // Asigna el adapter al RecyclerView
+        // Cargar los datos
+        fetchPokemons()
 
-        fetchPokemons() // Llamar a la API para cargar los datos
-        Log.d("PokemonAdapter", "Datos de Pokémon: ${pokemonList}")
-
-
+        // Configurar el botón de búsqueda
+        imageButtonSearch.setOnClickListener {
+            searchPokemons()
+        }
     }
-
 
     private fun fetchPokemons() {
         RetrofitClient.instance.getPokemonList().enqueue(object : Callback<List<Pokemon>> {
@@ -52,53 +69,109 @@ class Buscador : AppCompatActivity() {
                     pokemonList.clear()
                     pokemonList.addAll(response.body() ?: emptyList())
                     adapter.notifyDataSetChanged()
-                    // Esto debería estar donde haces la solicitud de la API, antes de procesar los datos
-                    Log.d("PokemonApi", "Respuesta cruda de la API: ${response.body()}")
-
                 } else {
-                    // Esto debería estar donde haces la solicitud de la API, antes de procesar los datos
-                    Log.d("PokemonApi", "Respuesta cruda de la API: ${response.body()}")
-
                     Toast.makeText(this@Buscador, "Error en la respuesta", Toast.LENGTH_SHORT).show()
                 }
             }
 
             override fun onFailure(call: Call<List<Pokemon>>, t: Throwable) {
                 Toast.makeText(this@Buscador, "Error: ${t.message}", Toast.LENGTH_LONG).show()
-                Log.e("API_ERROR", t.message.toString())
             }
         })
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+    private fun searchPokemons() {
+        val query = editTextSearch.text.toString().trim()
+
+        // Aquí podrías filtrar la lista de Pokémon por los spinners si es necesario.
+        // Ejemplo básico para filtrar por nombre (puedes expandir esto)
+        if (query.isNotEmpty()) {
+            val filteredList = pokemonList.filter { it.nombrePokemon.contains(query, ignoreCase = true) }
+            adapter.updatePokemonList(filteredList)
+        } else {
+            adapter.updatePokemonList(pokemonList)
+        }
+    }
+
+    private fun showDeleteConfirmationDialog(pokemon: Pokemon) {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Eliminar Pokémon")
+        builder.setMessage("¿Estás seguro de que deseas eliminar a ${pokemon.nombrePokemon}?")
+        builder.setPositiveButton("Sí") { _, _ -> deletePokemon(pokemon) }
+        builder.setNegativeButton("No", null)
+        builder.show()
+    }
+
+    private fun deletePokemon(pokemon: Pokemon) {
+        // Simula la eliminación del Pokémon (ajusta según tu API)
+        RetrofitClient.instance.deletePokemon(pokemon.num_pokedex).enqueue(object : Callback<Void> {
+            override fun onResponse(call: Call<Void>, response: Response<Void>) {
+                if (response.isSuccessful) {
+                    // Eliminar el Pokémon de la lista local
+                    adapter.removePokemon(pokemon)
+                    Toast.makeText(this@Buscador, "Pokémon eliminado", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(this@Buscador, "Error al eliminar el Pokémon", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            override fun onFailure(call: Call<Void>, t: Throwable) {
+                Toast.makeText(this@Buscador, "Error de conexión: ${t.message}", Toast.LENGTH_SHORT).show()
+            }
+        })
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
         return true
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.buscador_pokemon -> { irBuscador(); true }
-            R.id.informacio_pokemon -> { irInformacionPokemon(); true }
-            R.id.pokemon_favoritos -> { irPokemonFavoritos(); true }
-            R.id.ayuda -> { mostrarAyuda(); true }
-            R.id.salir -> { salirAplicacion(); true }
-            else -> super.onOptionsItemSelected(item)
-        }
+    fun mostrarAyuda(view: View?) {
+        val intent = Intent(this, Ayuda::class.java)
+        startActivity(intent)
     }
 
-    private fun mostrarAyuda() {
-        startActivity(Intent(this, Ayuda::class.java))
+    fun irBuscador(view: View?) {
+        val intent = Intent(this, Buscador::class.java)
+        startActivity(intent)
     }
-    private fun irBuscador() {
-        startActivity(Intent(this, Buscador::class.java))
+
+    fun irInformacionPokemon(view: View?) {
+        val intent = Intent(
+            this,
+            Informacion_entrenador::class.java
+        )
+        startActivity(intent)
     }
-    private fun irInformacionPokemon() {
-        startActivity(Intent(this, Informacion_entrenador::class.java))
+
+    fun irPokemonFavoritos(view: View?) {
+        val intent = Intent(this, Favoritos::class.java)
+        startActivity(intent)
     }
-    private fun irPokemonFavoritos() {
-        startActivity(Intent(this, Favoritos::class.java))
-    }
-    private fun salirAplicacion() {
+
+    fun salirAplicacion() {
         finishAffinity()
+        System.exit(0) // Correcto en Java
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val id = item.itemId
+        if (id == R.id.buscador_pokemon) {
+            irBuscador(null)
+            return true
+        } else if (id == R.id.informacio_pokemon) {
+            irInformacionPokemon(null)
+            return true
+        } else if (id == R.id.pokemon_favoritos) {
+            irPokemonFavoritos(null)
+            return true
+        } else if (id == R.id.ayuda) {
+            mostrarAyuda(null)
+            return true
+        } else if (id == R.id.salir) {
+            salirAplicacion()
+            return true
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

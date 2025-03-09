@@ -5,13 +5,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import androidx.appcompat.app.AlertDialog
 
-class PokemonAdapter(private val pokemonList: List<Pokemon>) :
-    RecyclerView.Adapter<PokemonAdapter.PokemonViewHolder>() {
+class PokemonAdapter(
+    private var pokemonList: List<Pokemon>,
+    private val onItemClickListener: (Pokemon) -> Unit // Agregar un listener para clic normal
+) : RecyclerView.Adapter<PokemonAdapter.PokemonViewHolder>() {
 
-    // ViewHolder para cada ítem del RecyclerView
     class PokemonViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val numPokedex: TextView = itemView.findViewById(R.id.num_pokedex)
         val imagenPokemon: ImageView = itemView.findViewById(R.id.imagen_pokemon)
@@ -19,26 +22,24 @@ class PokemonAdapter(private val pokemonList: List<Pokemon>) :
         val tipo1: TextView = itemView.findViewById(R.id.tipo1)
         val tipo2: TextView = itemView.findViewById(R.id.tipo2)
 
-        fun bind(pokemon: Pokemon) {
-            // Verifica si num_pokedex no es nulo y asigna un valor por defecto si es necesario
+
+        fun bind(pokemon: Pokemon, onItemClickListener: (Pokemon) -> Unit) {
             numPokedex.text = "#${pokemon.num_pokedex ?: "Desconocido"}"
-
-            // Verifica si nombrePokemon no es nulo y asigna un valor por defecto si es necesario
             nombrePokemon.text = pokemon.nombrePokemon ?: "Nombre no disponible"
-
-            // Verifica si tipo_1 no es nulo y asigna un valor por defecto si es necesario
             tipo1.text = pokemon.tipo_1 ?: "Tipo 1 desconocido"
-
-            // Si tipo_2 está vacío o es nulo, muestra "N/A"
             tipo2.text = if (pokemon.tipo_2?.isNotEmpty() == true) pokemon.tipo_2 else "N/A"
 
-            // Cargar la imagen desde la URL usando Glide (si la URL de la imagen no es nula)
             Glide.with(itemView.context)
-                .load(pokemon.imagen_pokemon) // La URL de la imagen
-                .placeholder(R.drawable.electric_icon) // Imagen mientras carga
-                .error(R.drawable.alakazam_sprite) // Imagen si hay un error
+                .load(pokemon.imagen_pokemon)
+                .placeholder(R.drawable.electric_icon)
+                .error(R.drawable.alakazam_sprite)
                 .into(imagenPokemon)
+
+            itemView.setOnClickListener {
+                onItemClickListener(pokemon) // Llamamos al listener cuando se hace clic
+            }
         }
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PokemonViewHolder {
@@ -47,8 +48,21 @@ class PokemonAdapter(private val pokemonList: List<Pokemon>) :
     }
 
     override fun onBindViewHolder(holder: PokemonViewHolder, position: Int) {
-        holder.bind(pokemonList[position])
+        holder.bind(pokemonList[position], onItemClickListener) // Pasamos el listener al ViewHolder
     }
 
     override fun getItemCount(): Int = pokemonList.size
+
+    // Método para eliminar un Pokémon de la lista
+    fun removePokemon(pokemon: Pokemon) {
+        val position = pokemonList.indexOf(pokemon)
+        if (position != -1) {
+            (pokemonList as MutableList).removeAt(position)
+            notifyItemRemoved(position)
+        }
+    }
+    fun updatePokemonList(newList: List<Pokemon>) {
+        pokemonList = newList
+        notifyDataSetChanged()
+    }
 }
