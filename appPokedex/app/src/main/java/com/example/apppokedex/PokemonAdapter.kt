@@ -12,7 +12,7 @@ import androidx.appcompat.app.AlertDialog
 
 class PokemonAdapter(
     private var pokemonList: List<Pokemon>,
-    private val onItemClickListener: (Pokemon) -> Unit // Agregar un listener para clic normal
+    private val onItemClickListener: (Pokemon) -> Unit
 ) : RecyclerView.Adapter<PokemonAdapter.PokemonViewHolder>() {
 
     class PokemonViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -36,7 +36,7 @@ class PokemonAdapter(
                 .into(imagenPokemon)
 
             itemView.setOnClickListener {
-                onItemClickListener(pokemon) // Llamamos al listener cuando se hace clic
+                onItemClickListener(pokemon)
             }
         }
 
@@ -48,12 +48,11 @@ class PokemonAdapter(
     }
 
     override fun onBindViewHolder(holder: PokemonViewHolder, position: Int) {
-        holder.bind(pokemonList[position], onItemClickListener) // Pasamos el listener al ViewHolder
+        holder.bind(pokemonList[position], onItemClickListener)
     }
 
     override fun getItemCount(): Int = pokemonList.size
 
-    // Método para eliminar un Pokémon de la lista
     fun removePokemon(pokemon: Pokemon) {
         val position = pokemonList.indexOf(pokemon)
         if (position != -1) {
