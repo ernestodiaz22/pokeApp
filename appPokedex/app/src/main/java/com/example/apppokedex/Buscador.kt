@@ -97,7 +97,7 @@ class Buscador : AppCompatActivity() {
         builder.setItems(options) { _, which ->
             when (which) {
                 0 -> editPokemon(pokemon)
-                1 -> showDeleteConfirmationDialog(pokemon)  // Eliminar
+                1 -> showDeleteConfirmationDialog(pokemon)
             }
         }
         builder.show()
@@ -105,7 +105,7 @@ class Buscador : AppCompatActivity() {
 
     private fun editPokemon(pokemon: Pokemon) {
         val intent = Intent(this, EditarPokemonActivity::class.java)
-        intent.putExtra("pokemon_id", pokemon.num_pokedex)
+        intent.putExtra("id_pokemon", pokemon.num_pokedex)
         startActivity(intent)
     }
 
