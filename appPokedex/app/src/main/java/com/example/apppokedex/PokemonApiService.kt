@@ -14,7 +14,6 @@ interface PokemonApiService {
     @POST("pokemons")
     fun addPokemon(@Body pokemon: Pokemon): Call<Pokemon>
 
-    // Nuevo método para eliminar Pokémon
     @DELETE("pokemons/{numero_pokedex}")
-    fun deletePokemon(@Path("numero_pokedex") pokemonId: Int): Call<Void>  // Void porque no esperamos respuesta
+    fun deletePokemon(@Path("numero_pokedex") pokemonId: Int): Call<Void>
 }

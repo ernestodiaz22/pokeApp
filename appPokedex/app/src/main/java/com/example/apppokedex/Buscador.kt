@@ -62,6 +62,8 @@ class Buscador : AppCompatActivity() {
         }
     }
 
+
+
     private fun fetchPokemons() {
         RetrofitClient.instance.getPokemonList().enqueue(object : Callback<List<Pokemon>> {
             override fun onResponse(call: Call<List<Pokemon>>, response: Response<List<Pokemon>>) {
@@ -83,8 +85,6 @@ class Buscador : AppCompatActivity() {
     private fun searchPokemons() {
         val query = editTextSearch.text.toString().trim()
 
-        // Aquí podrías filtrar la lista de Pokémon por los spinners si es necesario.
-        // Ejemplo básico para filtrar por nombre (puedes expandir esto)
         if (query.isNotEmpty()) {
             val filteredList = pokemonList.filter { it.nombrePokemon.contains(query, ignoreCase = true) }
             adapter.updatePokemonList(filteredList)
@@ -103,11 +103,9 @@ class Buscador : AppCompatActivity() {
     }
 
     private fun deletePokemon(pokemon: Pokemon) {
-        // Simula la eliminación del Pokémon (ajusta según tu API)
         RetrofitClient.instance.deletePokemon(pokemon.num_pokedex).enqueue(object : Callback<Void> {
             override fun onResponse(call: Call<Void>, response: Response<Void>) {
                 if (response.isSuccessful) {
-                    // Eliminar el Pokémon de la lista local
                     adapter.removePokemon(pokemon)
                     Toast.makeText(this@Buscador, "Pokémon eliminado", Toast.LENGTH_SHORT).show()
                 } else {

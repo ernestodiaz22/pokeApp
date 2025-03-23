@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-       >
+        >
 
         <LinearLayout
             android:layout_width="409dp"
@@ -25,17 +25,22 @@
 
 
                 <View
+                    android:id="@+id/contenedorPrimario"
                     android:layout_width="match_parent"
                     android:layout_height="450dp"
                     android:background="@drawable/entrada_pokedex_fondo1" />
 
 
                 <View
+                    android:id="@+id/contenedorSecundario"
                     android:layout_width="250dp"
                     android:layout_height="250dp"
-                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="65dp"
+                    android:layout_gravity=""
                     android:layout_marginTop="40dp"
-                    android:background="@drawable/entrada_pokedex_fondo2" />
+                    android:background="@color/cardview_light_background" >
+
+                </View>
 
 
                 <ImageView
@@ -43,7 +48,8 @@
                     android:id="@+id/imagen_pokemon"
                     android:layout_width="156dp"
                     android:layout_height="187dp"
-                    android:layout_gravity="center"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="112dp"
                     app:srcCompat="@drawable/charizard" />
 
                 <ImageButton
@@ -64,8 +70,8 @@
 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="100dp"
+                    android:layout_marginTop="300dp"
+                    android:layout_marginLeft="147dp"
                     android:text="Charizard"
                     android:textColor="@color/white"
                     android:textSize="24sp" />
@@ -85,33 +91,32 @@
 
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="170dp"
-                    android:gravity="center"
+
+                    android:layout_marginTop="350dp"
+                    android:layout_marginLeft="70dp"
                     android:orientation="horizontal">
 
 
                     <TextView
 
                         android:id="@+id/tipo1"
-
-                        android:layout_width="180dp"
-                        android:layout_height="40dp"
+                        android:layout_width="wrap_content"
                         android:background="@drawable/fondo_tipo_volador"
                         android:gravity="center"
                         android:text="Volador"
-
-
+                        android:layout_height="40dp"
+                        android:minWidth="120dp"
                         android:textColor="@color/white"
                         android:textSize="24sp" />
 
 
                     <TextView
                         android:id="@+id/tipo2"
-                        android:layout_width="180dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="40dp"
+                        android:minWidth="120dp"
                         android:layout_marginLeft="10dp"
                         android:background="@drawable/fondo_tipo_fuego"
                         android:gravity="center"

@@ -2,7 +2,7 @@
 <resources>
     <color name="menu_blue_light">#87CEFA</color>
     <color name="menu_text_color">#FFFFFF</color>
-    <color name="md_theme_primary">#87CEFA</color>
+    <color name="md_theme_primary">#19054E</color>
     <color name="color_background_button">#64269e</color>
     <color name="md_theme_onPrimary">#FFFFFF</color>
     <color name="md_theme_primaryContainer">#DA1D17</color>
