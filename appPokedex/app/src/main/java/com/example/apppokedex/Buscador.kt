@@ -61,6 +61,8 @@ class Buscador : AppCompatActivity() {
         }
     }
 
+
+
     private fun fetchPokemons() {
         RetrofitClient.instance.getPokemonList().enqueue(object : Callback<List<Pokemon>> {
             override fun onResponse(call: Call<List<Pokemon>>, response: Response<List<Pokemon>>) {

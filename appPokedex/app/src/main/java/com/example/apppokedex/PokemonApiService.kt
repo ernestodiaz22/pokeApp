@@ -25,3 +25,4 @@ interface PokemonApiService {
     fun obtenerPokemon(@Path("id") id: Int): Call<Pokemon>
 
 }
+
