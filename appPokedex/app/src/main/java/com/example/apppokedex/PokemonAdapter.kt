@@ -16,7 +16,9 @@ import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.transition.Transition
 
 class PokemonAdapter(
+
     private var pokemonList: MutableList<Pokemon>,
+
     private val onItemClickListener: (Pokemon) -> Unit
 ) : RecyclerView.Adapter<PokemonAdapter.PokemonViewHolder>() {
 
@@ -105,6 +107,7 @@ class PokemonAdapter(
                 .error(R.drawable.alakazam_sprite)
                 .into(imagenPokemon)
 
+
             Glide.with(itemView.context)
                 .asBitmap()
                 .load(pokemon.imagen_pokemon)
@@ -120,6 +123,7 @@ class PokemonAdapter(
 
                         contenedorPrimario.setBackgroundColor(dominantColor)
                     }
+
 
                     override fun onLoadCleared(placeholder: Drawable?) {
                         contenedorPrimario.setBackgroundColor(Color.WHITE)
@@ -138,13 +142,14 @@ class PokemonAdapter(
     }
 
     override fun onBindViewHolder(holder: PokemonViewHolder, position: Int) {
+
         val pokemon = pokemonList[position]
         holder.bind(pokemon, onItemClickListener)
+
     }
 
     override fun getItemCount(): Int = pokemonList.size
 
-    // Método para eliminar un Pokémon de la lista
     fun removePokemon(pokemon: Pokemon) {
         val position = pokemonList.indexOf(pokemon)
         if (position != -1) {

@@ -11,7 +11,6 @@ object RetrofitClient {
 
     private const val BASE_URL = "https://50.19.251.11/"
 
-
     private fun getUnsafeOkHttpClient(): OkHttpClient {
         val trustAllCertificates = object : X509TrustManager {
             override fun checkClientTrusted(chain: Array<out X509Certificate>?, authType: String?) {}

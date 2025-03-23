@@ -35,7 +35,6 @@ class Buscador : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_buscador)
 
-
         // Configura el Toolbar
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
@@ -50,7 +49,7 @@ class Buscador : AppCompatActivity() {
 
         // RecyclerView setup
         recyclerViewPokemon.layoutManager = LinearLayoutManager(this)
-        adapter = PokemonAdapter(pokemonList) { pokemon -> showDeleteConfirmationDialog(pokemon) }
+        adapter = PokemonAdapter(pokemonList) { pokemon -> showOptionsDialog(pokemon) }
         recyclerViewPokemon.adapter = adapter
 
         // Cargar los datos
@@ -91,6 +90,25 @@ class Buscador : AppCompatActivity() {
         } else {
             adapter.updatePokemonList(pokemonList)
         }
+    }
+
+    private fun showOptionsDialog(pokemon: Pokemon) {
+        val options = arrayOf("Editar", "Eliminar")
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Opciones para ${pokemon.nombrePokemon}")
+        builder.setItems(options) { _, which ->
+            when (which) {
+                0 -> editPokemon(pokemon)
+                1 -> showDeleteConfirmationDialog(pokemon)
+            }
+        }
+        builder.show()
+    }
+
+    private fun editPokemon(pokemon: Pokemon) {
+        val intent = Intent(this, EditarPokemonActivity::class.java)
+        intent.putExtra("id_pokemon", pokemon.num_pokedex)
+        startActivity(intent)
     }
 
     private fun showDeleteConfirmationDialog(pokemon: Pokemon) {
@@ -135,10 +153,7 @@ class Buscador : AppCompatActivity() {
     }
 
     fun irInformacionPokemon(view: View?) {
-        val intent = Intent(
-            this,
-            Informacion_entrenador::class.java
-        )
+        val intent = Intent(this, Informacion_entrenador::class.java)
         startActivity(intent)
     }
 
@@ -149,29 +164,35 @@ class Buscador : AppCompatActivity() {
 
     fun salirAplicacion() {
         finishAffinity()
-        System.exit(0) // Correcto en Java
+        System.exit(0)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val id = item.itemId
-        if (id == R.id.buscador_pokemon) {
-            irBuscador(null)
-            return true
-        } else if (id == R.id.informacio_pokemon) {
-            irInformacionPokemon(null)
-            return true
-        } else if (id == R.id.pokemon_favoritos) {
-            irPokemonFavoritos(null)
-            return true
-        } else if (id == R.id.ayuda) {
-            mostrarAyuda(null)
-            return true
-        } else if (id == R.id.salir) {
-            salirAplicacion()
-            return true
+        return when (item.itemId) {
+            R.id.buscador_pokemon -> {
+                irBuscador(null)
+                true
+            }
+            R.id.informacio_pokemon -> {
+                irInformacionPokemon(null)
+                true
+            }
+            R.id.pokemon_favoritos -> {
+                irPokemonFavoritos(null)
+                true
+            }
+            R.id.ayuda -> {
+                mostrarAyuda(null)
+                true
+            }
+            R.id.salir -> {
+                salirAplicacion()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
-        return super.onOptionsItemSelected(item)
     }
+
     fun onAddPokemonClick(view: View) {
         val intent = Intent(this, AgregarPokemonActivity::class.java)
         startActivity(intent)

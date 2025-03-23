@@ -7,5 +7,5 @@
         @SerializedName("imagen") val imagen_pokemon: String,
         @SerializedName("nombre") val nombrePokemon: String,
         @SerializedName("tipo1") val tipo_1: String,
-        @SerializedName("tipo2") val tipo_2: String? // tipo_2 es opcional
+        @SerializedName("tipo2") val tipo_2: String?
     )
