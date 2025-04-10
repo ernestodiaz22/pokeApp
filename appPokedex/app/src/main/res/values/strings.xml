@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">appPokedex</string>
+    <string name="cargaTexto">Cargando...</string>
 </resources>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/CustomPopupMenu"
+        app:titleTextColor="@color/menu_text_color"
+        app:popupTheme="@style/CustomPopupMenu" />
+
+    <!-- TextView -->
+    <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:padding="20dp"
+        android:text="🕵️ Buscador
+        ¿Buscas un Pokémon en particular? Aquí podrás escribir su nombre o número de la Pokédex pa’ encontrarlo más rápido que un Rapidash galopando. ¡Ideal pa' cuando estás tras esa criatura legendaria!"/>
+    <!-- TextView -->
+    <TextView
+        android:id="@+id/TextView02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:padding="20dp"
+        android:text="📖 Entrada de la Pokédex
+        ¡Ahoy! Esta es la biblioteca completa de todos los Pokémon que has visto o atrapado. Explora información sobre hábitats, habilidades y movimientos. ¡Es como un mapa del tesoro, pero con Pokémon!"/>
+    <!-- TextView -->
+    <TextView
+        android:id="@+id/TextView03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:padding="20dp"
+        android:text="🛡️ Equipo Pokémon
+        ¡Arrr, aquí está tu equipo en formación! Visualiza y organiza los Pokémon que usas en tus batallas. Cambia estrategias y prepárate pa’ cualquier duelo que te salga en el camino."/>
+
+    <TextView
+        android:id="@+id/TextView04"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:padding="20dp"
+        android:text="⭐ Favoritos
+        Marca a tus Pokémon preferidos como favoritos y tenlos siempre a la mano. Pa’ esos compañeros especiales que no quieres perder de vista, como un amuleto de la suerte."/>
+
+    <TextView
+        android:id="@+id/TextView05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:padding="20dp"
+        android:text="🎖️ Información del Entrenador
+        ¡Es hora de lucir tus logros, capitán! Aquí podrás ver tu información como entrenador, incluyendo tu nombre, nivel, insignias y estadísticas. Muestra tu progreso con orgullo, marinero."/>
+
+    <TextView
+        android:id="@+id/TextView06"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:padding="20dp"
+        android:text="🐾 Información del Pokémon
+        Haz clic en cualquier Pokémon pa’ descubrir su información detallada: tipo, movimientos, evoluciones y más. Esto te ayudará a planificar estrategias como todo un estratega naval."/>
+
+    <TextView
+        android:id="@+id/TextView07"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:padding="20dp"
+        android:text="💛 Pokémon Favoritos
+        ¡Yarrr! Una lista dedicada exclusivamente a tus Pokémon favoritos. Accede rápidamente a sus datos y encuentra a esos camaradas especiales sin dar muchas vueltas."/>
+
+    <TextView
+        android:id="@+id/TextView08"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:padding="20dp"
+        android:text="⚔️ Menú de Equipos Pokémon
+        Construye y gestiona varios equipos Pokémon pa’ diferentes desafíos. Personaliza tu escuadra y prepárate pa’ enfrentarte a lo que venga en las batallas. ¡Un capitán siempre lleva su tripulación lista!"/>
+
+    <TextView
+        android:id="@+id/TextView09"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:padding="20dp"
+        android:text="⚙️ Consejo Final
+        Explora las pantallas y prueba todas las funciones. ¡Recuerda que la verdadera aventura es explorar y convertirte en el mejor, como nunca nadie lo fue!" />"/>
+
+</LinearLayout>

@@ -5,18 +5,31 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".equipo_pokemon">
+    tools:context=".Equipo_pokemon">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-            <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                >
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/CustomPopupMenu"
+            app:titleTextColor="@color/menu_text_color"
+            app:popupTheme="@style/CustomPopupMenu"
+            tools:ignore="MissingConstraints" />
 
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_marginHorizontal="16dp"
@@ -25,11 +38,8 @@
                     android:layout_marginTop="80dp"
                     android:paddingVertical="20dp"
                     android:orientation="vertical">
-
-
-
                     <TextView
-                        android:id="@+id/textView53"
+
                         android:textSize="24sp"
                         android:layout_width="300dp"
                         android:layout_height="40dp"
@@ -52,13 +62,13 @@
                             android:layout_height="match_parent">
 
                             <ImageView
-                                android:id="@+id/imageView13"
+
                                 android:layout_width="100dp"
                                 android:layout_height="100dp"
                                 app:srcCompat="@drawable/charizar_pixel_icon" />
 
                             <ImageView
-                                android:id="@+id/imageView14"
+
                                 android:layout_width="25dp"
                                 android:layout_height="25dp"
                                 android:layout_gravity="end"
@@ -69,7 +79,6 @@
                                 app:srcCompat="@drawable/male_icon" />
 
                             <TextView
-                                android:id="@+id/textView54"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textColor="@color/white"
@@ -82,7 +91,6 @@
 
 
                             <TextView
-                                android:id="@+id/textView56"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textColor="#5AC55A"
@@ -100,7 +108,6 @@
                                 android:background="@drawable/barra_hp"/>
 
                             <TextView
-                                android:id="@+id/textView55"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="95dp"
@@ -111,7 +118,6 @@
 
 
                             <TextView
-                                android:id="@+id/textView57"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="95dp"
@@ -137,13 +143,11 @@
                             android:layout_height="match_parent">
 
                             <ImageView
-                                android:id="@+id/imageView15"
                                 android:layout_width="100dp"
                                 android:layout_height="100dp"
                                 app:srcCompat="@drawable/venasaur_pixel_icon" />
 
                             <ImageView
-                                android:id="@+id/imageView16"
                                 android:layout_width="25dp"
                                 android:layout_height="25dp"
                                 android:layout_gravity="end"
@@ -273,75 +277,10 @@
                                 android:textSize="24sp"
                                 android:text="ADD POKÉMON" />
                         </FrameLayout>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="300dp"
-                        android:layout_height="200dp"
-                        android:background="@drawable/fondo_equipo_pokemon"
-                        android:layout_gravity="center_horizontal"
-                        android:padding="25dp"
-                        android:orientation="horizontal">
-
-                        <FrameLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                            <ImageView
-                                android:id="@+id/imageView233"
-                                android:layout_width="35dp"
-                                android:layout_height="35dp"
-                                android:layout_marginTop="55dp"
-                                android:layout_marginLeft="20dp"
-                                app:srcCompat="@drawable/add_pokemon"/>
-                            <TextView
-                                android:id="@+id/textView123"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textColor="@color/white"
-                                android:layout_marginTop="55dp"
-                                android:layout_marginLeft="20dp"
-                                android:layout_gravity="center_horizontal"
-                                android:textSize="24sp"
-                                android:text="ADD POKÉMON" />
-                        </FrameLayout>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="300dp"
-                        android:layout_height="200dp"
-                        android:background="@drawable/fondo_equipo_pokemon"
-                        android:layout_gravity="center_horizontal"
-                        android:padding="25dp"
-                        android:orientation="horizontal">
-
-                        <FrameLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                            <ImageView
-                                android:id="@+id/imageView27"
-                                android:layout_width="35dp"
-                                android:layout_height="35dp"
-                                android:layout_marginTop="55dp"
-                                android:layout_marginLeft="20dp"
-                                app:srcCompat="@drawable/add_pokemon"/>
-                            <TextView
-                                android:id="@+id/textView30"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textColor="@color/white"
-                                android:layout_marginTop="55dp"
-                                android:layout_marginLeft="20dp"
-                                android:layout_gravity="center_horizontal"
-                                android:textSize="24sp"
-                                android:text="ADD POKÉMON" />
-                        </FrameLayout>
                     </LinearLayout>
                 </LinearLayout>
-            </ScrollView>
-
+            </LinearLayout>
+        </ScrollView>
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

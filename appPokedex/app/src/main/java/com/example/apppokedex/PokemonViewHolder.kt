@@ -13,7 +13,7 @@ class PokemonViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     fun render(pokemonItem: Pokemon) {
         tvNombrePokemon.text = pokemonItem.nombrePokemon
-        tvTipo1Pokemon.text = if (pokemonItem.tipo_2.isNotEmpty()) {
+        tvTipo1Pokemon.text = if (pokemonItem.tipo_2?.isNotEmpty() == true) {
             "${pokemonItem.tipo_1} / ${pokemonItem.tipo_2}"
         } else {
             pokemonItem.tipo_1

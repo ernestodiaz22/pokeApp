@@ -6,17 +6,27 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".buscador">
- 
+    tools:context=".Buscador">
 
   <LinearLayout
       android:layout_width="match_parent"
       android:layout_height="match_parent"
-      android:orientation="vertical">
+      android:orientation="vertical"
+      android:paddingTop="50dp">
 
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/CustomPopupMenu"
+        app:titleTextColor="@color/menu_text_color"
+        app:popupTheme="@style/CustomPopupMenu"
+        tools:ignore="MissingConstraints" />
 
     <!-- Search bar -->
-
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -48,7 +58,6 @@
 
       <Spinner
           android:id="@+id/spinnerTipo1"
-
           android:layout_width="0dp"
           android:layout_height="wrap_content"
           android:layout_weight="1" />
@@ -58,13 +67,22 @@
           android:layout_width="0dp"
           android:layout_height="wrap_content"
           android:layout_weight="1" />
-   
+
     </LinearLayout>
 
     <Spinner
         android:id="@+id/spinnerRegion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/buttonAddPokemon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Añadir Pokémon"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:onClick="onAddPokemonClick"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewPokemon"
@@ -73,14 +91,5 @@
         android:padding="16dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:scrollbars="vertical" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-      </LinearLayout>
-    </ScrollView>
-
   </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
-

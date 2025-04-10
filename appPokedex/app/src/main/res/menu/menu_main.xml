@@ -1,0 +1,34 @@
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/informacio_pokemon"
+        android:title="Información del entrenador"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/buscador_pokemon"
+        android:title="Buscar pokémon"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/pokemon_favoritos"
+        android:title="Pokémon favoritos"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/ayuda"
+        android:title="Ayuda"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/Estadistica"
+        android:title="Estadisticas"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/salir"
+        android:title="Salir"
+        app:showAsAction="never" />
+</menu>
