@@ -32,6 +32,6 @@ class Carga : AppCompatActivity() {
             val intent = Intent(this@Carga, Login::class.java)
             startActivity(intent)
             finish()  // Finalizar la SplashActivity para que no se pueda volver atrás
-        }, 1000)  // 2000 milisegundos (2 segundos)
+        }, 5000)  // 2000 milisegundos (2 segundos)
     }
 }
